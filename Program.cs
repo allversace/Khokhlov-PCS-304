@@ -6,12 +6,11 @@ namespace Generic_extension
         static void Main(string[] args)
         {
             var obj = new { Name = "Arthur", Age = 18 };
-            obj.ToJsonString();
-            Console.WriteLine(obj);
+            var json = obj.ToJsonString();
+            Console.WriteLine(json);
             
-            var objTwo = @"{'Name' : Arthur , Age = 18}";
-            objTwo.FromJsonString();
-            Console.WriteLine(objTwo);
+            var newObj = json.FromJson<{Name: String, Age: int}>();
+            Console.WriteLine(newObj);
         }
     }
 }
