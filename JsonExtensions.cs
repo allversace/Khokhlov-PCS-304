@@ -7,5 +7,10 @@ namespace Generic_extension
         {
             return JsonConvert.SerializeObject(obj);
         }
+        
+        public static T FromJsonString<T>(this string obj)
+        {
+            return JsonConvert.DeserializeObject(obj);
+        }
     }
 }
