@@ -8,6 +8,10 @@ namespace Generic_extension
             var obj = new { Name = "Arthur", Age = 18 };
             obj.ToJsonString();
             Console.WriteLine(obj);
+            
+            var objTwo = @"{'Name' : Arthur , Age = 18}";
+            objTwo.FromJsonString();
+            Console.WriteLine(objTwo);
         }
     }
 }
