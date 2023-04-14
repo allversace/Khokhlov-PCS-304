@@ -8,9 +8,9 @@ namespace Generic_extension
             return JsonConvert.SerializeObject(obj);
         }
         
-        public static T FromJsonString<T>(this string obj)
+        public static T FromJson<T>(this string json)
         {
-            return JsonConvert.DeserializeObject(obj);
+            return JsonConvert.DeserializeObject<T>(json);
         }
     }
 }
