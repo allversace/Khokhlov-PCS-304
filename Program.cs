@@ -11,6 +11,9 @@ namespace Generic_extension
             
             var newObj = json.FromJson<{Name: String, Age: int}>();
             Console.WriteLine(newObj);
+            
+            Console.WriteLine(newObj.Name);
+            Console.WriteLine(newObj.Age);
         }
     }
 }
