@@ -1,0 +1,37 @@
+using System;
+using System.IO;
+using System.Windows;
+
+namespace HomeWork22_04_23
+{
+    public partial class MainWindow
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void SaveFile_OnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string filePath = @"C:\\Users\\artur\\OneDrive\\Рабочий стол\\Курсовая работа\\HomeWork.txt";
+                string writeText = WriteTextBox.Text;
+                
+                File.WriteAllText(filePath,writeText);
+                string fileText = File.ReadAllText(filePath);
+
+                OutputTextBox.Text = fileText;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void Close_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+    }
+}
